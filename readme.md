@@ -22,25 +22,25 @@ Examples && Documentation
 from jTransliterate import JapaneseTransliterator
 
 # Transliterate from Latin/English to [Hirag/Katak]ana
-x = JapaneseTransliterator('kanazawa')
+x = JapaneseTransliterator(u'kanazawa')
 print x.transliterate_from_latn_to_hrkt()
 # Should print "かなざわ"
 
 # Transliterate from Hiragana to Latin/English
-b = JapaneseTransliterator('かなざわ')
+b = JapaneseTransliterator(u'かなざわ')
 print b.transliterate_from_hira_to_latn()
 # Should print "kanazawa"
 
 # Transliterate from either Hiragana or Katakana to Latin/English
-print b.transliterate_from_hrkt_to_latn(text = 'カナザワ')
+print b.transliterate_from_hrkt_to_latn(text = u'カナザワ')
 # Should print "kanazawa"
 
 # Transliterate from Katakan to Hiragana (You... probably never need to do this)
-print b.transliterate_from_kana_to_hira(text = 'キットカート')
+print b.transliterate_from_kana_to_hira(text = u'キットカート')
 # Should print "きっとかーと"
 
 # Transliterate from Hiragana to Katakana
-print b.transliterate_from_hira_to_kana(text = 'かなざわ')
+print b.transliterate_from_hira_to_kana(text = u'かなざわ')
 # Should print "カナザワ" 
 
 # If you want to convert between half/full width kana, you can use the following

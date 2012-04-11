@@ -2,7 +2,7 @@
 #!/usr/bin/python
 
 __author__ = "Ryan McGrath <ryan@venodesigns.net>"
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 """
     A class that allows for easy transliteration of [Hirag/Katak]ana
@@ -62,8 +62,8 @@ class JapaneseTransliterator(object):
                     the class instance.
         """
         text = self.transliterate_from_kana_to_hira(text)
-        return self.transliterate_from_hira_to_latn(text)
-
+        return self.transliterate_from_hira_to_latn(text.encode('utf-8'))
+    
     @defaultToSelfText    
     def transliterate_from_hira_to_latn(self, text):
         """transliterate_from_hira_to_latn(self, text)
@@ -115,7 +115,7 @@ class JapaneseTransliterator(object):
                     romaji += for_conversion
                     index += length
                     klength -= length
-                                
+        
         return romaji
     
     @defaultToSelfText
@@ -129,7 +129,7 @@ class JapaneseTransliterator(object):
                     the class instance.
         """
         # Duplicate the text...
-        romaji = text * 1
+        romaji = (text * 1).decode('utf-8')
         kana = ''
         
         romaji = re.sub('/m([BbPp])/', 'n\1', romaji)
