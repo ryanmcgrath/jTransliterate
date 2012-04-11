@@ -4,7 +4,7 @@ from setuptools import setup
 from setuptools import find_packages
 
 __author__ = 'Ryan McGrath <ryan@venodesigns.net>'
-__version__ = '1.0.2'
+__version__ = '1.0.3'
 
 setup(
     # Basic package information.
@@ -19,8 +19,8 @@ setup(
     author='Ryan McGrath',
     author_email='ryan@venodesigns.net',
     license='MIT License',
-    url='http://github.com/ryanmcgrath/twython/tree/master',
-    keywords='japanese translation transliterate katakana hiragana latin',
+    url='https://github.com/ryanmcgrath/jTransliterate',
+    keywords='japanese translation transliterate katakana hiragana latin romaji',
     description='Transliterate [Hirag/Katak]ana to Latin/English and back. Convert half/full-width Japanese text.',
     long_description=open('readme.md').read(),
     classifiers=[
