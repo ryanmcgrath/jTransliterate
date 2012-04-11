@@ -245,7 +245,6 @@ class JapaneseTransliterator(object):
         codepoints = map(lambda char: ord(char), list(text))
         
         for codepoint in codepoints:
-            print codepoint
             if codepoint >= range_start and codepoint <= range_end:
                 transposed_text += unichr(codepoint + distance)
             else:
