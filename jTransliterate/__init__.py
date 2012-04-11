@@ -2,7 +2,7 @@
 #!/usr/bin/python
 
 __author__ = "Ryan McGrath <ryan@venodesigns.net>"
-__version__ = "1.0"
+__version__ = "1.0.1"
 
 """
     A class that allows for easy transliteration of [Hirag/Katak]ana
