@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Jtransliterate by ryanmcgrath</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Jtransliterate</h1>
+        <p class="header">Transliterate [Hirag/Katak]ana to Latin/English and back with Python. Convert half/full-width Japanese text.</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/ryanmcgrath/jTransliterate/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/ryanmcgrath/jTransliterate/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/ryanmcgrath/jTransliterate">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/ryanmcgrath">ryanmcgrath</a></p>
+
+
+      </header>
+      <section>
+        <h1>jTransliterate - [Hirag/Katak]ana to Latin/English &amp; Back</h1>
+
+<p>Sometimes you may want to convert from Hiragana to Katakana, or back again, or...
+I dunno, maybe you wanna get the English pronunciation of these words. I'll
+be honest and say it's of no concern or interest to me, but I needed this in
+Python and so I ported it, figured I'd release it.</p>
+
+<p>It's MIT licensed. Credit for much of this also belongs to Kim Ahlström and
+his linguistics/etc work on <strong><a href="https://github.com/Kimtaro/ve/blob/master/lib/providers/japanese_transliterators.rb">Ve</a></strong>.</p>
+
+<h2>Installation</h2>
+
+<pre><code>pip install jTransliterate
+</code></pre>
+
+<h2>Examples &amp;&amp; Documentation</h2>
+
+<div class="highlight"><pre><span class="c"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">from</span> <span class="nn">jTransliterate</span> <span class="kn">import</span> <span class="n">JapaneseTransliterator</span>
+
+<span class="c"># Transliterate from Latin/English to [Hirag/Katak]ana</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">JapaneseTransliterator</span><span class="p">(</span><span class="s">u'kanazawa'</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">x</span><span class="o">.</span><span class="n">transliterate_from_latn_to_hrkt</span><span class="p">()</span>
+<span class="c"># Should print "かなざわ"</span>
+
+<span class="c"># Transliterate from Hiragana to Latin/English</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">JapaneseTransliterator</span><span class="p">(</span><span class="s">u'かなざわ'</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">b</span><span class="o">.</span><span class="n">transliterate_from_hira_to_latn</span><span class="p">()</span>
+<span class="c"># Should print "kanazawa"</span>
+
+<span class="c"># Transliterate from either Hiragana or Katakana to Latin/English</span>
+<span class="k">print</span> <span class="n">b</span><span class="o">.</span><span class="n">transliterate_from_hrkt_to_latn</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="s">u'カナザワ'</span><span class="p">)</span>
+<span class="c"># Should print "kanazawa"</span>
+
+<span class="c"># Transliterate from Katakan to Hiragana (You... probably never need to do this)</span>
+<span class="k">print</span> <span class="n">b</span><span class="o">.</span><span class="n">transliterate_from_kana_to_hira</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="s">u'キットカート'</span><span class="p">)</span>
+<span class="c"># Should print "きっとかーと"</span>
+
+<span class="c"># Transliterate from Hiragana to Katakana</span>
+<span class="k">print</span> <span class="n">b</span><span class="o">.</span><span class="n">transliterate_from_hira_to_kana</span><span class="p">(</span><span class="n">text</span> <span class="o">=</span> <span class="s">u'かなざわ'</span><span class="p">)</span>
+<span class="c"># Should print "カナザワ" </span>
+
+<span class="c"># If you want to convert between half/full width kana, you can use the following</span>
+<span class="c"># functions. I didn't care enough to do demos here. ;|</span>
+<span class="n">b</span><span class="o">.</span><span class="n">transliterate_from_halfwidth_to_fullwidth</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">transliterate_from_fullwidth_to_halfwidth</span><span class="p">()</span>
+</pre></div>
+
+<h2>Questions, Comments, Complaints and/or etc</h2>
+
+<p>Hit me up on them Twitters or find me on them internets at the links below.</p>
+
+<p>Twitter: <strong><a href="http://twitter.com/ryanmcgrath/">@ryanmcgrath</a></strong><br>
+Web: <strong><a href="http://venodesigns.net/">Veno Designs</a></strong>  </p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-40660943-4");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
